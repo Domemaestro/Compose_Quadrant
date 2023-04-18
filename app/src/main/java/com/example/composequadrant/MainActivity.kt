@@ -13,6 +13,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight.Companion.Bold
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.composequadrant.ui.theme.ComposeQuadrantTheme
@@ -48,22 +49,26 @@ fun ComposeQuadrant(
     q4Title:String,
     q4Desc:String,
     ){
-    Column() {
-        Row(modifier = Modifier.align(Alignment.CenterHorizontally)) {
+    Column(Modifier.fillMaxSize()) {
+        Row(Modifier.weight(1f)) {
             FirstQuadrant(title = q1Title, desc = q1Desc)
             SecondQuadrant(title = q2Title, desc = q2Desc)
         }
-        Row(modifier = Modifier.align(Alignment.CenterHorizontally)){
-            ThirdQuadrant(title = q3Title, desc = q3Desc)
+        Row(Modifier.weight(1f)){
+            ThirdQuadrant(title = q3Title, desc = q3Desc )
             FourthQuadrant(title = q4Title, desc = q4Desc)
         }
     }
 }
 @Composable
 fun FirstQuadrant(title:String,desc:String){
-    Column(modifier = Modifier
+    Column(
+        modifier = Modifier.fillMaxSize(1f)
         .background(Color.Green)
-        .padding(16.dp)) {
+        .padding(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+        , verticalArrangement = Arrangement.Center
+    ) {
         Text(
             text = title
             , modifier = Modifier.padding(16.dp)
@@ -73,16 +78,21 @@ fun FirstQuadrant(title:String,desc:String){
         Text(
             text = desc
             , modifier = Modifier.padding(16.dp),
-
+            textAlign = TextAlign.Justify
         )
     }
 }
 
 @Composable
 fun SecondQuadrant(title:String,desc:String){
-    Column(modifier = Modifier
+    Column(
+        modifier = Modifier.fillMaxSize(1f)
         .background(Color.Yellow)
-        .padding(16.dp)) {
+        .padding(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+        , verticalArrangement = Arrangement.Center
+
+    ) {
         Text(
             text = title
             , modifier = Modifier.padding(16.dp)
@@ -92,16 +102,20 @@ fun SecondQuadrant(title:String,desc:String){
         Text(
             text = desc
             , modifier = Modifier.padding(16.dp),
-
+            textAlign = TextAlign.Justify
             )
     }
 }
 
 @Composable
 fun ThirdQuadrant(title:String,desc:String){
-    Column(modifier = Modifier
+    Column(
+        modifier = Modifier.fillMaxSize()
         .background(Color.Blue)
-        .padding(16.dp)) {
+        .padding(16.dp)
+        ,horizontalAlignment = Alignment.CenterHorizontally
+        , verticalArrangement = Arrangement.Center
+    ) {
         Text(
             text = title
             , modifier = Modifier.padding(16.dp)
@@ -111,16 +125,20 @@ fun ThirdQuadrant(title:String,desc:String){
         Text(
             text = desc
             , modifier = Modifier.padding(16.dp),
-
+            textAlign = TextAlign.Justify
             )
     }
 }
 
 @Composable
 fun FourthQuadrant(title:String,desc:String){
-    Column(modifier = Modifier
+    Column(
+        modifier = Modifier.fillMaxSize()
         .background(Color.LightGray)
-        .padding(16.dp)) {
+        .padding(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+        , verticalArrangement = Arrangement.Center
+    ) {
         Text(
             text = title
             , modifier = Modifier.padding(16.dp)
@@ -130,7 +148,7 @@ fun FourthQuadrant(title:String,desc:String){
         Text(
             text = desc
             , modifier = Modifier.padding(16.dp),
-
+            textAlign = TextAlign.Justify
             )
     }
 }
