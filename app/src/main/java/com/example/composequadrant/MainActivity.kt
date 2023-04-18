@@ -63,7 +63,7 @@ fun ComposeQuadrant(
 @Composable
 fun FirstQuadrant(title:String,desc:String){
     Column(
-        modifier = Modifier.fillMaxSize(1f)
+        modifier = Modifier.fillMaxWidth(0.5f).fillMaxHeight()
         .background(Color.Green)
         .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
@@ -86,7 +86,7 @@ fun FirstQuadrant(title:String,desc:String){
 @Composable
 fun SecondQuadrant(title:String,desc:String){
     Column(
-        modifier = Modifier.fillMaxSize(1f)
+        modifier = Modifier.fillMaxWidth(1f).fillMaxHeight()
         .background(Color.Yellow)
         .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
@@ -110,7 +110,7 @@ fun SecondQuadrant(title:String,desc:String){
 @Composable
 fun ThirdQuadrant(title:String,desc:String){
     Column(
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier.fillMaxWidth(0.5f).fillMaxHeight()
         .background(Color.Blue)
         .padding(16.dp)
         ,horizontalAlignment = Alignment.CenterHorizontally
